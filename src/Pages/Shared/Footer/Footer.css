@@ -1,0 +1,44 @@
+.footer {
+    background-color: #212529;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo-img {
+    margin-right: 4px;
+}
+
+.footer-menu-item {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    margin-top: 8px;
+}
+
+.footer-menu-item:hover {
+    color: aqua;
+}
+
+.footer-terms-policy {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    font-size: 32px;
+    margin-right: 20px;
+    color: white;
+}
+
+.social-icon:hover {
+    color: aqua;
+}
+
+.hr-line {
+    height: 2px;
+    border-width: 0;
+    color: gray;
+    background-color: gray;
+}

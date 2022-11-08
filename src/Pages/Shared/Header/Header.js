@@ -22,7 +22,7 @@ const Header = () => {
         <div className='header-container'>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Link className='navbar-brand' to="/"><img className='logo-img' src="#" alt="" />Bizon's Learning</Link>
+                    <Link className='navbar-brand' to="/"><img className='logo-img' src="#" alt="" />MS Architect</Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
