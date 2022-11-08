@@ -8,23 +8,22 @@ const Blog = () => {
                 <div className='blog-container'>
                     <h1 className='text-center py-4'>LATEST BLOGS</h1>
                     <div className="blog-content mb-4">
-                        <h3>What is CORS?</h3>
-                        <p>Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources. CORS also relies on a mechanism by which browsers make a "preflight" request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request. In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request.</p>
+                        <h3>What is the difference betweenSQl and NoSQL?</h3>
+                        <p>SQL databases are vertically scalable, while NoSQL databases are horizontally scalable. SQL databases are table-based, while NoSQL databases are document, key-value, graph, or wide-column stores. SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.</p>
                     </div>
                     <div className="blog-content mb-4">
-                        <h3>Why are you using firebase? What other options do you have to implement authentication?</h3>
-                        <p>Firebase helps you develop high-quality apps, grow your user base, and earn more money. Each feature works independently, and they work even better together.
-                            Usually, authentication by a server entails the use of a user name and password. Other ways to authenticate can be through cards, retina scans, voice recognition, and fingerprints.
+                        <h3>What is JWT and how does it works?</h3>
+                        <p>JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed.
                         </p>
                     </div>
                     <div className="blog-content mb-4">
-                        <h3>How does the private route work?</h3>
-                        <p>The react private route component renders child components ( children ) if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property.
+                        <h3>What is the difference between JavaScript and Node Js?</h3>
+                        <p>JavaScript is a simple programming language that can be used with any browser that has the JavaScript Engine installed. Node. js, on the other hand, is an interpreter or execution environment for the JavaScript programming language.
                         </p>
                     </div>
                     <div className="blog-content pb-4">
-                        <h3>What is Node? How does node work?</h3>
-                        <p>It is a used as backend service where javascript works on the server-side of the application. This way javascript is used on both frontend and backend. Node. js runs on chrome v8 engine which converts javascript code into machine code, it is highly scalable, lightweight, fast, and data-intensive.
+                        <h3>How does Node Js handle multiple request at the same time?</h3>
+                        <p>NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them.
                         </p>
                     </div>
                 </div>
