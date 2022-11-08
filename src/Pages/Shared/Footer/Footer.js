@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import logo from '../../../logo.jpg';
+import logo from '../../../logo.png';
 import './Footer.css'
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaTwitter } from 'react-icons/fa';
@@ -14,12 +14,12 @@ const Footer = () => {
                 <Row className='d-flex flex-md-row flex-column'>
                     <Col className='d-flex flex-column text-lg-center text-white text-decoration-none mt-5'>
                         <Link className='navbar-brand text-2xl' to="/">
-                            <img className='logo-img' src="#" alt="" /><small className='h3'>Bizon's Learning</small>
+                            <img className='logo-img' src={logo} alt="" /><small className='h3'>MS Architect</small>
                         </Link>
                         <Link className='footer-menu-item' to='/'>Home</Link>
-                        <Link className='footer-menu-item' to='/courses'>Courses</Link>
+                        <Link className='footer-menu-item' to='/courses'></Link>
                         <Link className='footer-menu-item' to='/blog'>Blog</Link>
-                        <Link className='footer-menu-item' to='/faq'>FAQ</Link>
+                        <Link className='footer-menu-item' to='/faq'></Link>
 
                     </Col>
 

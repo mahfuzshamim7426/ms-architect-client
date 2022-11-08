@@ -6,7 +6,7 @@ import { CiLight } from 'react-icons/ci';
 import { BsFillMoonFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 // import { AuthContext } from '../../../context/AuthProvider';
-// import logo from '../../../logo.jpg';
+import logo from '../../../logo.png';
 import './Header.css'
 const Header = () => {
     // const { user, logOut } = useContext(AuthContext)
@@ -22,7 +22,7 @@ const Header = () => {
         <div className='header-container'>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Link className='navbar-brand' to="/"><img className='logo-img' src="#" alt="" />MS Architect</Link>
+                    <Link className='navbar-brand' to="/"><img className='logo-img' src={logo} alt="" />MS Architect</Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
