@@ -1,0 +1,5 @@
+.cover-img {
+    height: 500px;
+    background-image: url("../../../../public/images/cover.jpg");
+    background-size: cover;
+}

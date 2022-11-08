@@ -11,3 +11,52 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.section-title {
+  color: #c5a47e;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  word-spacing: 5px;
+}
+
+.section-subtitle {
+  color: #3c556e;
+  font-size: 23px;
+  line-height: 1.5em;
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header-subtitle {
+  color: #3c556e;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-desc {
+  color: #3c556eab;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.section-fancyText {
+  color: #3c556e;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.3em;
+  font-family: 'Playfair Display', serif;
+}

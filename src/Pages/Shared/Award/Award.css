@@ -1,0 +1,36 @@
+.award-section {
+    background-color: #f8f8f8;
+    padding: 80px 0;
+}
+
+.award-section .header-area {
+    margin-bottom: 40px;
+}
+
+.award-section .content {}
+
+.award-section .content .single-content {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #3c556e34;
+}
+
+.award-section .single-content .year {
+    width: 33%;
+    color: #3c556e;
+    font-size: 35px;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.award-section .single-content .desc {
+    width: 50%;
+}
+
+.award-section .award-footer {
+    margin-top: 40px;
+    padding: 0 20px;
+}

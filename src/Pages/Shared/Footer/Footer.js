@@ -17,7 +17,7 @@ const Footer = () => {
                             <img className='logo-img' src={logo} alt="" /><small className='h3'>MS Architect</small>
                         </Link>
                         <Link className='footer-menu-item' to='/'>Home</Link>
-                        <Link className='footer-menu-item' to='/courses'></Link>
+                        <Link className='footer-menu-item' to='/services'>Services</Link>
                         <Link className='footer-menu-item' to='/blog'>Blog</Link>
                         <Link className='footer-menu-item' to='/faq'></Link>
 

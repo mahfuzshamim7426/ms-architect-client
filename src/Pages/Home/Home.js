@@ -1,9 +1,14 @@
 import React from 'react';
+import Award from '../Shared/Award/Award';
+import Cover from '../Shared/Cover/Cover';
+import ServiceProvide from '../Shared/ServiceProvide/ServiceProvide';
 
 const Home = () => {
     return (
         <div>
-            This is home
+            <Cover></Cover>
+            <ServiceProvide></ServiceProvide>
+            <Award></Award>
 
         </div>
     );
