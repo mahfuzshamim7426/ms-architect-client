@@ -3,3 +3,10 @@
     background-image: url("../../../../public/images/cover.jpg");
     background-size: cover;
 }
+
+.cover-img .cover-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-top: 50px; */
+}
