@@ -2,15 +2,12 @@ import React, { useContext, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { CiLight } from 'react-icons/ci';
-import { BsFillMoonFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
 import logo from '../../../logo.png';
 import './Header.css'
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
-    const [darkMode, setDarkMode] = useState(false)
     // console.log('user', user)
 
     const handleSignOut = () => {
@@ -31,16 +28,17 @@ const Header = () => {
                             <Link className='nav-link' to="/blog">Blog</Link>
                             <Link className='nav-link' to="/faq">FAQ</Link>
 
+                            {user &&
+                                user?.email &&
+                                <Link className='nav-link' to="/my-reviews">My Reviews</Link>
+                            }
+                            {user &&
+                                user?.email &&
+                                <Link className='nav-link' to="/add-service">Add Service</Link>
+                            }
+
                         </Nav>
                         <Nav>
-                            <button className={`dark-button`}
-                                onClick={() => {
-                                    setDarkMode(!darkMode)
-                                }}
-                            >
-                                {darkMode ? <BsFillMoonFill /> : <CiLight />
-                                }
-                            </button>
                             {user &&
                                 user?.email ?
                                 <button onClick={handleSignOut} className="">Log out</button>
