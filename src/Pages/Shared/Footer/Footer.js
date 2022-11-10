@@ -42,7 +42,7 @@ const Footer = () => {
                     <hr />
                 </div>
                 <div>
-                    <p className='my-4 h-2 text-white'>© Bizon's Learning, All rights reserved. </p>
+                    <p className='my-4 h-2 text-white text-center'>© MS Architect, All rights reserved. </p>
                 </div>
 
             </Container>
