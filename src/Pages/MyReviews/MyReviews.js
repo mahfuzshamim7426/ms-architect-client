@@ -13,6 +13,10 @@ const MyReviews = () => {
     const [modalShow, setModalShow] = React.useState(false);
     const { user } = useContext(AuthContext);
 
+    useEffect(() => {
+        document.title = "My Reviews Page Ms-Architect"
+    }, [])
+
     // ===========fetch all reviews of an user================
     useEffect(() => {
         if (user?.email) {

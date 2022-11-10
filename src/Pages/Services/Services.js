@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ServiceProvide from '../Shared/ServiceProvide/ServiceProvide';
 import SpinnerGroup from '../Shared/Utils/SpinnerGroup';
 
 const Services = () => {
     const allServices = useLoaderData()
+    useEffect(() => {
+        document.title = "Services Page Ms-Architect"
+    }, [])
 
     return (
         <div>

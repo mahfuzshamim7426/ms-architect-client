@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -10,6 +10,10 @@ const SignUp = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false)
     const { createUser } = useContext(AuthContext);
+
+    useEffect(() => {
+        document.title = "Signup Page Ms-Architect"
+    }, [])
 
     const handleSubmit = (event) => {
         event.preventDefault();

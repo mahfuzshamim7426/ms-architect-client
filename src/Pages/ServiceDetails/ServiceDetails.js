@@ -16,6 +16,10 @@ const ServiceDetails = () => {
     let { id } = useParams();
 
     useEffect(() => {
+        document.title = "Details Service Page Ms-Architect"
+    }, [])
+
+    useEffect(() => {
         if (id) {
             fetch(`https://ms-architect-server.vercel.app/service-reviews/${id}`, {
                 method: 'GET',

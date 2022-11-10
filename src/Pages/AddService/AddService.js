@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { AuthContext } from '../../context/AuthProvider';
 import './AddService.css';
@@ -6,6 +6,10 @@ import { toast, ToastContainer } from 'react-toastify';
 
 const AddService = () => {
     const { user } = useContext(AuthContext);
+
+    useEffect(() => {
+        document.title = "Add Service Page Ms-Architect"
+    }, [])
 
     const handleSubmit = event => {
         event.preventDefault();
