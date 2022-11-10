@@ -53,6 +53,37 @@ const MyReviews = () => {
             });
     }
 
+    const handleEditReview = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form?.name?.value;
+        const text = form?.text?.value;
+        const rating = form?.rating?.value;
+
+        const reviewInputData = {
+            name,
+            text,
+            rating,
+        }
+        console.log('reviewInputData', reviewInputData)
+
+        fetch(`https://ms-architect-server.vercel.app/reviews/${editData?._id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('msarc-token')}`
+            },
+            body: JSON.stringify(reviewInputData)
+        })
+            .then(response => {
+                setModalShow(false)
+                toast.success('Review Updated Successfully', { autoClose: 2000, closeOnClick: true, })
+            })
+            .catch(error => {
+                toast.error('Sorry, Server Error', { autoClose: 2000, closeOnClick: true, })
+            });
+    }
+
     return (
         <div className='my-reviews'>
             <div className='container mx-auto'>
@@ -123,33 +154,36 @@ const MyReviews = () => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div>
-                        <div class="mb-3">
-                            <label for="formFile" class="form-label">Name</label>
-                            <input defaultValue={editData?.name} class="form-control" type="text" id="formFile" />
+                    <form onSubmit={handleEditReview}>
+                        <div>
+                            <div className="mb-3">
+                                <label for="formFile" className="form-label">Name</label>
+                                <input defaultValue={editData?.name} name="name" className="form-control" type="text" id="formFile" />
+                            </div>
+                            <div className="mb-3">
+                                <label for="formText" className="form-label">Review Text</label>
+                                <input defaultValue={editData?.text} name="text" className="form-control" type="text" id="formText" />
+                            </div>
+                            <select
+                                name='rating'
+                                defaultValue={editData?.rating}
+                                className="form-select" aria-label="Default select example">
+                                <option selected>Rating number</option>
+                                <option value="5">5</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
                         </div>
-                        <div class="mb-3">
-                            <label for="formText" class="form-label">Review Text</label>
-                            <input defaultValue={editData?.text} class="form-control" type="text" id="formText" />
+                        <div className='service-btn-wrapper'>
+                            <button
+                                type='subit'
+                                className='service-btn text-center mt-4 align-center'>Update</button>
                         </div>
-                        <select
-                            defaultValue={editData?.rating}
-                            class="form-select" aria-label="Default select example">
-                            <option selected>Rating number</option>
-                            <option value="5">5</option>
-                            <option value="4">4</option>
-                            <option value="3">3</option>
-                            <option value="2">2</option>
-                            <option value="1">1</option>
-                        </select>
-                    </div>
+                    </form>
                 </Modal.Body>
-                <Modal.Footer>
-                    <div className='service-btn-wrapper'>
-                        <button
-                            className='service-btn text-center mt-4 align-center'>Update</button>
-                    </div>
-                </Modal.Footer>
+
             </Modal>
         );
     }
