@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { AuthContext } from '../../context/AuthProvider';
 import './AddService.css';
+import { toast, ToastContainer } from 'react-toastify';
 
 const AddService = () => {
     const { user } = useContext(AuthContext);
@@ -19,7 +20,7 @@ const AddService = () => {
             price,
             description,
         }
-        fetch('http://localhost:5000/services', {
+        fetch('https://ms-architect-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -29,12 +30,12 @@ const AddService = () => {
         })
             .then(response => response.json())
             .then(response => {
-                //toast
-                //clear form
+                toast.success('Service Added Successfully', { autoClose: 2000, closeOnClick: true, })
+                form.reset();
             })
             .catch(error => {
                 console.error(error)
-                //toast
+                toast.error('Sorry, Server Error', { autoClose: 2000, closeOnClick: true, })
             });
     }
 
@@ -63,6 +64,7 @@ const AddService = () => {
                     Submit
                 </Button>
             </Form>
+            <ToastContainer closeOnClick />
         </div>
     );
 };

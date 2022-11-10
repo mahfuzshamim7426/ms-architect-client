@@ -26,7 +26,7 @@ const Login = () => {
                     email: user.email
                 }
                 // get jwt token
-                fetch('http://localhost:5000/jwt-creator', {
+                fetch('https://ms-architect-server.vercel.app/jwt-creator', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -54,7 +54,7 @@ const Login = () => {
                     email: user.email
                 }
                 // get jwt token
-                fetch('http://localhost:5000/jwt-creator', {
+                fetch('https://ms-architect-server.vercel.app/jwt-creator', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
