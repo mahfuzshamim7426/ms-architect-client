@@ -15,26 +15,58 @@ const Login = () => {
         event.preventDefault();
 
         const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
+        const email = form?.email?.value;
+        const password = form?.password?.value;
 
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
-                form.reset();
-                navigate(from, { replace: true })
-                // navigate('/')
+
+                const currentUser = {
+                    email: user.email
+                }
+                // get jwt token
+                fetch('http://localhost:5000/jwt-creator', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('msarc-token', data.token);
+                        form.reset();
+                        navigate(from, { replace: true })
+                        // navigate('/')
+                    });
+
             })
             .catch(error => console.error(error));
     }
+
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
                 const user = result.user;
-                // console.log(user);
-                // navigate('/')
-                navigate(from, { replace: true })
+
+                const currentUser = {
+                    email: user.email
+                }
+                // get jwt token
+                fetch('http://localhost:5000/jwt-creator', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('msarc-token', data.token);
+                        navigate(from, { replace: true })
+                        // navigate('/')
+                    });
 
             })
             .catch(error => console.error(error));
@@ -46,13 +78,13 @@ const Login = () => {
             <Form onSubmit={handleSubmit} className='form-items-container'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control className='form-item' type="email" placeholder="Enter email" />
+                    <Form.Control className='form-item' name="email" type="email" placeholder="Enter email" />
 
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control className='form-item' type="password" placeholder="Password" />
+                    <Form.Control className='form-item' name="password" type="password" placeholder="Password" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />

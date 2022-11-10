@@ -52,7 +52,7 @@ const Header = () => {
                             }
                             {user && !user?.photoURL &&
                                 <button className='user-photo' data-toggle="tooltip" data-placement="bottom" title={user?.displayName}>
-                                    <img src='./user-placeholder.png' alt="user" />
+                                    <img src='./images/user/placeholder-user.png' alt="user" />
                                 </button>
                             }
                         </Nav>

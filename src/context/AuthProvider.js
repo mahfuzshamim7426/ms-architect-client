@@ -24,6 +24,7 @@ const AuthProvider = ({ children }) => {
 
     const logOut = () => {
         setLoading(true);
+        localStorage.removeItem('msarc-token');
         return signOut(auth);
     }
 
@@ -31,7 +32,7 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             setLoading(false);
-            console.log('auth state changed', currentUser);
+            // console.log('auth state changed', currentUser);
         })
 
         return () => {

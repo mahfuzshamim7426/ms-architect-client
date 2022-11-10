@@ -7,6 +7,7 @@ import Login from '../../Pages/Login/Login/Login';
 import SignUp from '../../Pages/Login/SignUp/SignUp';
 import MyReviews from '../../Pages/MyReviews/MyReviews';
 import Services from '../../Pages/Services/Services';
+import NotFound from '../../Pages/Shared/NotFound/NotFound';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
             {
                 path: 'add-service',
                 element: <PrivateRoute><AddService></AddService></PrivateRoute>
+            },
+            {
+                path: '*',
+                element: <NotFound></NotFound>
             }
 
         ]

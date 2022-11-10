@@ -35,8 +35,23 @@ const SignUp = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                // console.log(user);
-                form.reset();
+                // console.log('user',user);
+                const currentUser = {
+                    email: user.email
+                }
+                // get jwt token
+                fetch('http://localhost:5000/jwt-creator', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('msarc-token', data.token);
+                        form.reset();
+                    });
             })
             .catch(error => console.error(error));
 

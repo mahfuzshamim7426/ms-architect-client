@@ -8,8 +8,8 @@ const ServiceProvide = () => {
                 <div>
                     <h2 className='section-title  text-center fs-3 mb-5'>Services</h2>
                     <Row xs={1} md={3} className="g-4">
-                        {Array.from({ length: 3 }).map((_, idx) => (
-                            <Col>
+                        {Array.from({ length: 3 }).map((_, index) => (
+                            <Col key={index}>
                                 <Card>
                                     <Card.Img variant="top" src="./images/cover.jpg" />
                                     <Card.Body>
