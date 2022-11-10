@@ -8,10 +8,13 @@ import './SignUp.css';
 
 const SignUp = () => {
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false)
     const { createUser } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        setLoading(true)
+
         const form = event.target;
         const email = form.email.value;
         const name = form.name.value;
@@ -51,9 +54,14 @@ const SignUp = () => {
                     .then(data => {
                         localStorage.setItem('msarc-token', data.token);
                         form.reset();
+                        setLoading(false)
                     });
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                console.error(error)
+                setLoading(false)
+
+            });
 
     }
 
@@ -66,11 +74,11 @@ const SignUp = () => {
                     <Form.Control className='form-item' name="name" type="name" placeholder="Enter Full Name" />
 
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                {/* <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Upload Photo</Form.Label>
                     <Form.Control className='form-item' name="file" type="file" placeholder="Enter email" />
 
-                </Form.Group>
+                </Form.Group> */}
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control className='form-item' name="email" type="email" placeholder="Enter email" />
@@ -90,7 +98,7 @@ const SignUp = () => {
             </Form>
             <br />
             <p>Already Have an Account <Link to='/login'>Login</Link></p>
-            <button className="btn btn-outline btn-success"><div className='d-flex align-items-center'><FaGoogle /><div className='ms-2'>Google Login</div></div></button>
+            {/* <button className="btn btn-outline btn-success"><div className='d-flex align-items-center'><FaGoogle /><div className='ms-2'>Google Login</div></div></button> */}
 
             <p className='text-error'>{error}</p>
         </div>
