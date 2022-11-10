@@ -4,7 +4,6 @@ import { AuthContext } from '../../context/AuthProvider';
 import './MyReviews.css'
 import { toast, ToastContainer } from 'react-toastify';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 
 const MyReviews = () => {
     const [reviewsData, setReviewsData] = useState([])

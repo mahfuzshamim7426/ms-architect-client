@@ -2,8 +2,11 @@ import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import './ServiceProvide.css'
 import { Link } from 'react-router-dom';
+import Modal from 'react-bootstrap/Modal';
 
 const ServiceProvide = ({ sectionTitle, allServices }) => {
+    const [modalShow, setModalShow] = React.useState(false);
+    const [modalImage, setModalImage] = React.useState('');
     return (
         <div className="service-section">
             <div className='container'>
@@ -14,7 +17,12 @@ const ServiceProvide = ({ sectionTitle, allServices }) => {
                             allServices?.map((service, index) => (
                                 <Col key={index}>
                                     <Card>
-                                        <Card.Img variant="top" src={service?.image} />
+                                        <Card.Img
+                                            onClick={() => {
+                                                setModalShow(true)
+                                                setModalImage(service?.image)
+                                            }}
+                                            variant="top" src={service?.image} />
                                         <Card.Body>
                                             <Card.Title className='section-subtitle'>{service?.name}</Card.Title>
                                             <Card.Title className='header-minititle'>Price: ${service?.price}</Card.Title>
@@ -41,9 +49,33 @@ const ServiceProvide = ({ sectionTitle, allServices }) => {
                         </div>
                     }
                 </div>
+                <ServiceimageModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                />
             </div>
         </div>
     );
+
+    function ServiceimageModal(props) {
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                </Modal.Header>
+                <Modal.Body>
+                    <div>
+                        <img src={modalImage} alt="image" />
+                    </div>
+                </Modal.Body>
+
+            </Modal>
+        );
+    }
 };
 
 export default ServiceProvide;
