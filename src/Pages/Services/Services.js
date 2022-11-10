@@ -1,10 +1,13 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import ServiceProvide from '../Shared/ServiceProvide/ServiceProvide';
 
 const Services = () => {
+    const allServices = useLoaderData()
+
     return (
         <div>
-            <h2>All sevices Page</h2>
-
+            <ServiceProvide sectionTitle={'All sevices'} allServices={allServices}></ServiceProvide>
         </div>
     );
 };

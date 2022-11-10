@@ -26,3 +26,8 @@
     color: #c5a47e;
     border: 1px solid #c5a47e;
 }
+
+.text-wrapper {
+    height: 190px;
+    overflow: hidden;
+}

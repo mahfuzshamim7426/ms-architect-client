@@ -1,14 +1,16 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 import Award from '../Shared/Award/Award';
 import Cover from '../Shared/Cover/Cover';
 import QuickContact from '../Shared/QuickContact/QuickContact';
 import ServiceProvide from '../Shared/ServiceProvide/ServiceProvide';
 
 const Home = () => {
+    const allServices = useLoaderData()
     return (
         <div>
             <Cover></Cover>
-            <ServiceProvide></ServiceProvide>
+            <ServiceProvide sectionTitle={'Services'} allServices={allServices?.slice(0, 3)}></ServiceProvide>
             <Award></Award>
             <QuickContact></QuickContact>
 

@@ -45,6 +45,16 @@ code {
   letter-spacing: 1px;
 }
 
+.header-minititle {
+  color: #c5a47e;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .section-desc {
   color: #3c556eab;
   font-size: 16px;

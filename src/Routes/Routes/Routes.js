@@ -6,6 +6,7 @@ import Home from '../../Pages/Home/Home';
 import Login from '../../Pages/Login/Login/Login';
 import SignUp from '../../Pages/Login/SignUp/SignUp';
 import MyReviews from '../../Pages/MyReviews/MyReviews';
+import ServiceDetails from '../../Pages/ServiceDetails/ServiceDetails';
 import Services from '../../Pages/Services/Services';
 import NotFound from '../../Pages/Shared/NotFound/NotFound';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
@@ -18,7 +19,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                loader: () => fetch('https://bizon-learning-server.vercel.app/courses'),
+                loader: () => fetch('http://localhost:5000/services'),
                 element: <Home></Home>
             },
             {
@@ -35,7 +36,13 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'services',
+                loader: () => fetch('http://localhost:5000/services'),
                 element: <Services></Services>
+            },
+            {
+                path: '/services/:id',
+                element: <ServiceDetails></ServiceDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: 'my-reviews',
